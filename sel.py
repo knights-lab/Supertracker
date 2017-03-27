@@ -1,5 +1,6 @@
 """
 	To Install Selenium: pip install selenium
+	This script will scrape nutritional data from Supertracker
 """
 
 from selenium import webdriver
@@ -196,22 +197,11 @@ def outputNutrients():
 ###This part will just "Initialize" the browser: logging in and navigating to the necessary pages
 ###Uncomment Chromedriver and comment PhantomJS for JS debugging issues
 
-#driver=webdriver.Chrome(executable_path='/Users/austinkim/Downloads/chromedriver')
-#driver=webdriver.PhantomJS(executable_path='/Users/austinkim/Desktop/Knights Lab/phantomjs-2.1.1-macosx/bin/phantomjs')
-
 
 ROOT_DIR=path.dirname(path.abspath(__file__))
 driver=webdriver.PhantomJS(executable_path=path.join(ROOT_DIR, 'phantomjs-2.1.1-macosx/bin/phantomjs'))
 #driver=webdriver.Chrome(executable_path=path.join(ROOT_DIR, 'chromedriver'))
 
-
-# ### SAMPLE PARAMETERS
-# user='chaustinkim'
-# password='asdfgh123'
-# firstDate="01/05/17"
-# secondDate="01/06/17"
-# fileOutput="output.txt"
-#var="Y"
 
 # ###PARAMETERS
 user=sys.argv[1]
