@@ -17,17 +17,17 @@ def getCalories():
 	global dateDict
 	number="mast_level1_cph_mast_level2_cph_lnkCalories"
 	try:
-		element=WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.ID, "mast_level1_cph_mast_level2_cph_lbDataDetails")))
+		element=WebDriverWait(driver, 50).until(EC.presence_of_element_located((By.ID, "mast_level1_cph_mast_level2_cph_lbDataDetails")))
 	finally:
 		webe=driver.find_element_by_id(number)
 		print(webe.text.encode('ascii', errors='ignore').decode('utf-8'))
 		webe.click()
 		try:
-			chartElem=WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.ID, "mast_level1_cph_mast_level2_cph_profiletextChart")))
+			chartElem=WebDriverWait(driver, 50).until(EC.presence_of_element_located((By.ID, "mast_level1_cph_mast_level2_cph_profiletextChart")))
 			driver.find_element_by_id("mast_level1_cph_mast_level2_cph_lbDataDetails").click()
 		finally:
 			try:		
-				nextElem=WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.TAG_NAME, "th")))
+				nextElem=WebDriverWait(driver, 50).until(EC.presence_of_element_located((By.TAG_NAME, "th")))
 			finally:
 				if(len(dateDict)==0):
 					dateElems=driver.find_elements_by_class_name("dateColumn")
@@ -52,17 +52,17 @@ def getFoodGroupInfo(num):
 	global dateDict
 	number="mast_level1_cph_mast_level2_cph_gvFoodGroups_btnSelect_"+str(num)
 	try:
-		element=WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "mast_level1_cph_mast_level2_cph_lbDataDetails")))
+		element=WebDriverWait(driver, 50).until(EC.presence_of_element_located((By.ID, "mast_level1_cph_mast_level2_cph_lbDataDetails")))
 	finally:
 		webe=driver.find_element_by_id(number)
 		print(webe.text.encode('ascii', errors='ignore').decode('utf-8'))
 		webe.click()
 		try:
-			chartElem=WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "mast_level1_cph_mast_level2_cph_profiletextChart")))
+			chartElem=WebDriverWait(driver, 50).until(EC.presence_of_element_located((By.ID, "mast_level1_cph_mast_level2_cph_profiletextChart")))
 			driver.find_element_by_id("mast_level1_cph_mast_level2_cph_lbDataDetails").click()
 		finally:
 			try:		
-				nextElem=WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, "th")))
+				nextElem=WebDriverWait(driver, 50).until(EC.presence_of_element_located((By.TAG_NAME, "th")))
 			finally:
 				if(len(dateDict)==0):
 					dateElems=driver.find_elements_by_class_name("dateColumn")
@@ -127,17 +127,17 @@ def getNutrientInfo(num):
 	global dateDict
 	number="mast_level1_cph_mast_level2_cph_gvNutrients_btnSelect_"+str(num)
 	try:
-		element=WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "mast_level1_cph_mast_level2_cph_lbDataDetails")))
+		element=WebDriverWait(driver, 50).until(EC.presence_of_element_located((By.ID, "mast_level1_cph_mast_level2_cph_lbDataDetails")))
 	finally:
 		webe=driver.find_element_by_id(number)
 		print(webe.text.encode('ascii', errors='ignore').decode('utf-8'))
 		webe.click()
 		try:
-			chartElem=WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, "mast_level1_cph_mast_level2_cph_profiletextChart")))
+			chartElem=WebDriverWait(driver, 50).until(EC.presence_of_element_located((By.ID, "mast_level1_cph_mast_level2_cph_profiletextChart")))
 			driver.find_element_by_id("mast_level1_cph_mast_level2_cph_lbDataDetails").click()
 		finally:
 			try:		
-				nextElem=WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.TAG_NAME, "th")))
+				nextElem=WebDriverWait(driver, 50).until(EC.presence_of_element_located((By.TAG_NAME, "th")))
 			finally:
 				if(len(dateDict)==0):
 					dateElems=driver.find_elements_by_class_name("dateColumn")
@@ -201,23 +201,23 @@ def outputNutrients():
 
 
 ROOT_DIR=path.dirname(path.abspath(__file__))
-#driver=webdriver.PhantomJS(executable_path=path.join(ROOT_DIR, 'phantomjs-2.1.1-macosx/bin/phantomjs'))
-driver=webdriver.Chrome(executable_path=path.join(ROOT_DIR, 'chromedriver'))
+driver=webdriver.PhantomJS(executable_path=path.join(ROOT_DIR, 'phantomjs-2.1.1-macosx/bin/phantomjs'))
+#driver=webdriver.Chrome(executable_path=path.join(ROOT_DIR, 'chromedriver'))
 
 
-### SAMPLE PARAMETERS
-user='chaustinkim'
-password='asdfgh123'
-firstDate="01/05/17"
-secondDate="01/06/17"
-fileOutput="output.txt"
+# ### SAMPLE PARAMETERS
+# user='chaustinkim'
+# password='asdfgh123'
+# firstDate="01/05/17"
+# secondDate="01/06/17"
+# fileOutput="output.txt"
 #var="Y"
 
 # ###PARAMETERS
-# user=sys.argv[1]
-# password=sys.argv[2]
-# firstDate=sys.argv[3]
-# secondDate=sys.argv[4]
+user=sys.argv[1]
+password=sys.argv[2]
+firstDate=sys.argv[3]
+secondDate=sys.argv[4]
 
 #var=raw_input("Add food portions as well? (Y/N)")
 
@@ -242,8 +242,7 @@ dateDict={}
 
 ### Add all nutrient informations
 addAllNut()
-#if(var is "Y"):
-#	getFoodPortions()
+
 
 ### Print to file in outputNutrients
 getFoodGroupInfo(1)
