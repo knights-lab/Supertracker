@@ -1,5 +1,4 @@
 from selenium import webdriver
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -9,7 +8,7 @@ import os.path as path
 import string
 import sys
 import datetime
-
+import argparse
 
 #
 # Scrapes from Meal Summary from 
@@ -25,6 +24,15 @@ import datetime
 #	will add assertions for proper logins and passwords later
 
 
+def make_arg_parser():
+	parser = argparse.ArgumentParser(description='Scrapes portion and meal data')
+	parser.add_argument('-o', '--outputdir', help='Output directory', required=True)    
+	parser.add_argument('-u', '--user', help='Supertracker user', required=True)
+	parser.add_argument('-p', '--password', help='password', required=True)
+	parser.add_argument('-f', '--firstDate', help='ex. 01/01/16', required=True)
+	parser.add_argument('-s', '--secondDate', help='ex. 01/02/16', required=True)
+	return parser
+
 def generateDates(start, end):
 	print("Generating Dates")
 	global dateList
@@ -35,12 +43,9 @@ def generateDates(start, end):
 	while(startDate!=endDate):
 		print(startDate.strftime("%m/%d/%y"))
 		dateList.append(startDate.strftime("%m/%d/%y"))
-		#dateDict[startDate.strftime("%m/%d/%y")]=""
 		startDate+=datetime.timedelta(days=1)
 	print(startDate.strftime("%m/%d/%y"))
-	dateList.append(startDate.strftime("%m/%d/%y"))
-	#return dateList
-		#dateDict[startDate.strftime("%m/%d/%y")]=""
+	dateList.append(startDate.strftime("%m/%d/%y"))	
 
 def getFoodIndex(strung):
 	#Find index where portion desc ends and food begins, first capital letter
@@ -54,6 +59,7 @@ def getFoodIndex(strung):
 	return -1
 
 def waiter(browser):
+	print('waiter')
 	global firstDate
 	elements = browser.find_elements_by_xpath("//*[text()='Date']/parent::*/parent::*/following-sibling::tr")
 	if len(elements) != 0:
@@ -75,14 +81,22 @@ def preWaiter(browser):
 	print("attaching dom...")
 	return False
 
-def getFoodInfo():
-	global dateDict
-	
-	try:
-		driver.find_element_by_id("mast_level1_cph_mast_level2_cph_btnreport").click()
+def initWaiter(browser):
+	elements=driver.find_elements_by_id("mast_level1_cph_mast_level2_cph_btnreport")
+	if(len(elements) != 0):
+		return elements
+	return False
 
-		#Wait for DOM to attach
-		date=WebDriverWait(driver, 30).until(preWaiter)
+def getFoodInfo():
+	global dateDict	
+	global driver
+	try:
+		print('getting info...')
+		btn=WebDriverWait(driver, 100).until(initWaiter)
+		print(btn)
+		btn[0].click()
+		#driver.find_element_by_id("mast_level1_cph_mast_level2_cph_btnreport").click()
+		date=WebDriverWait(driver, 120).until(preWaiter)
 		driver.implicitly_wait(5)
 		element=WebDriverWait(driver, 120).until(waiter)
 		print("element1: "+element[0].text)
@@ -91,7 +105,6 @@ def getFoodInfo():
 	finally:
 		newDate=""
 		for i in element:				#FOR EACH ROW in TABLE
-			
 			elements = i.find_elements_by_xpath("child::td")		#find all td in row
 			if(elements[2].text!=" "):
 				newDate=elements[2].text
@@ -157,9 +170,6 @@ def getFoodInfo():
 							#print(mealData)
 							dateDict[newDate]=dateDict[newDate]+mealData
 
-	#for i in dateDict:
-	#	print(dateDict[i])
-	#print(dateDict)
 
 def writeOutput():
 	global ROOT_DIR
@@ -173,37 +183,52 @@ def writeOutput():
 		oneMealList=dateDict[i].split('\n')
 		for it in range(len(oneMealList)-1):
 			f.write('{}\t{}\n'.format(i, oneMealList[it]))
-	f.close
-
-ROOT_DIR=path.dirname(path.dirname(path.abspath(__file__)))
-driver=webdriver.PhantomJS(executable_path=path.join(ROOT_DIR, 'phantomjs-2.1.1-macosx/bin/phantomjs'))
-#driver=webdriver.Chrome(executable_path=path.join(ROOT_DIR, 'chromedriver'))
-
-##PARAMETERS
-user=sys.argv[1]
-password=sys.argv[2]
-firstDate=sys.argv[3]
-secondDate=sys.argv[4]
-fileOutput="mealSummaryOutput.txt"
+	f.close()
 
 
-driver.get("https://www.supertracker.usda.gov/login.aspx")
-driver.find_element_by_id("mast_level1_cph_mast_level2_cph_login_UserName").send_keys(user)
-driver.find_element_by_id("mast_level1_cph_mast_level2_cph_login_Password").send_keys(password)
-driver.find_element_by_id("mast_level1_cph_mast_level2_cph_login_LoginButton").click()
+def main():
+	try:
+		global driver
+		global dateDict
+		global dateList
+		global firstDate
+		global secondDate
+		global ROOT_DIR
+		global fileOutput
+		
+		dateDict = {}
+		dateList = []
+		parser = make_arg_parser()
+		args = parser.parse_args()
+		user=args.user
+		password = args.password
+		firstDate = args.firstDate
+		secondDate = args.secondDate
+		fileOutput = args.outputdir
+			
+		ROOT_DIR=path.dirname(path.dirname(path.abspath(__file__)))
+		driver=webdriver.PhantomJS(executable_path=path.join(ROOT_DIR, 'phantomjs-2.1.1-macosx/bin/phantomjs'))
+		#driver=webdriver.Chrome(executable_path=path.join(ROOT_DIR, 'chromedriver'))
+		driver.get("https://www.supertracker.usda.gov/login.aspx")
+		driver.find_element_by_id("mast_level1_cph_mast_level2_cph_login_UserName").send_keys(user)
+		driver.find_element_by_id("mast_level1_cph_mast_level2_cph_login_Password").send_keys(password)
+		driver.find_element_by_id("mast_level1_cph_mast_level2_cph_login_LoginButton").click()
 
-driver.get("https://www.supertracker.usda.gov/MealSummaryReport.aspx")
-driver.find_element_by_name("ctl00$ctl00$mast_level1_cph$mast_level2_cph$txtFrom").clear()
-driver.find_element_by_name("ctl00$ctl00$mast_level1_cph$mast_level2_cph$txtFrom").send_keys(firstDate)
-driver.find_element_by_name("ctl00$ctl00$mast_level1_cph$mast_level2_cph$txtThru").clear()
-driver.find_element_by_name("ctl00$ctl00$mast_level1_cph$mast_level2_cph$txtThru").send_keys(secondDate)
-driver.find_element_by_id("mast_level1_cph_mast_level2_cph_MealCheckBoxAll").click()
+		driver.get("https://www.supertracker.usda.gov/MealSummaryReport.aspx")
+		driver.find_element_by_name("ctl00$ctl00$mast_level1_cph$mast_level2_cph$txtFrom").clear()
+		driver.find_element_by_name("ctl00$ctl00$mast_level1_cph$mast_level2_cph$txtFrom").send_keys(firstDate)
+		driver.find_element_by_name("ctl00$ctl00$mast_level1_cph$mast_level2_cph$txtThru").clear()
+		driver.find_element_by_name("ctl00$ctl00$mast_level1_cph$mast_level2_cph$txtThru").send_keys(secondDate)
+		generateDates(firstDate, secondDate)
+		driver.find_element_by_id("mast_level1_cph_mast_level2_cph_MealCheckBoxAll").click()
+		
+		#generateDates(firstDate, secondDate)
+		getFoodInfo()
+		writeOutput()
+		driver.close()
+	except BaseException as e:
+		print(str(e))
 
-
-
-dateDict={}
-dateList=[]
-generateDates(firstDate, secondDate)
-getFoodInfo()
-writeOutput()
-driver.close()
+if __name__ == '__main__':
+	# Python syntax to run main when script is called
+	main()

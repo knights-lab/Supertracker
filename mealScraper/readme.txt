@@ -5,12 +5,16 @@ To run:
 3. place phantomJS inside current working directory /mealScraper
 4. run the bash script in /bin
 
+sample call:
+
+	./run.sh user password firstDate secondDate fileOutputName
 parameters:
+
 	user
 	password
 	first Date (ex. "mm/dd/yy")
 	second Date
-
+	For the moment, fileOutputName must be mealScraperOutput.txt
 required:
 python 3
 selenium
