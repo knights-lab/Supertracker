@@ -199,8 +199,8 @@ def outputNutrients():
 
 
 ROOT_DIR=path.dirname(path.abspath(__file__))
-driver=webdriver.PhantomJS(executable_path=path.join(ROOT_DIR, 'phantomjs-2.1.1-macosx/bin/phantomjs'))
-#driver=webdriver.Chrome(executable_path=path.join(ROOT_DIR, 'chromedriver'))
+#driver=webdriver.PhantomJS(executable_path=path.join(ROOT_DIR, 'phantomjs-2.1.1-macosx/bin/phantomjs'))
+driver=webdriver.Chrome(executable_path=path.join(ROOT_DIR, 'chromedriver'))
 
 
 # ###PARAMETERS

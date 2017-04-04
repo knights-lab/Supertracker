@@ -1,0 +1,73 @@
+Date	PortionUnit	Amount	FoodType
+01/06/17	oz.	3.5	Grains
+01/06/17	oz.	0	Whole Grains
+01/06/17	oz.	3.5	Refined Grains
+01/06/17	cup(s)	1	Vegetables
+01/06/17	cup(s)	1	Dark Green
+01/06/17	cup(s)	0	Red & Orange
+01/06/17	cup(s)	0	Beans & Peas
+01/06/17	cup(s)	0	Starchy
+01/06/17	cup(s)	0	Other
+01/06/17	cup(s)	0	Fruits
+01/06/17	cup(s)	0	Fruit Juice
+01/06/17	cup(s)	0	Whole Fruit
+01/06/17	cup(s)	0.25	Dairy
+01/06/17	cup(s)	0	Milk & Yogurt
+01/06/17	cup(s)	0.25	Cheese
+01/06/17	oz.	3.5	Protein Foods
+01/06/17	oz.	3	Seafood
+01/06/17	oz.	0	Meat, Poultry & Eggs
+01/06/17	oz.	0	Nuts, Seeds & Soy
+01/06/17	tsp.	4	Oils
+01/06/17	Calories	1250	Total Calories
+01/06/17	Calories	43	Added Sugars
+01/06/17	Calories	222	Saturated Fat
+01/06/17	Calories	0	Alcohol
+01/07/17	oz.	2.5	Grains
+01/07/17	oz.	0	Whole Grains
+01/07/17	oz.	2.5	Refined Grains
+01/07/17	cup(s)	0.25	Vegetables
+01/07/17	cup(s)	0	Dark Green
+01/07/17	cup(s)	0	Red & Orange
+01/07/17	cup(s)	0.25	Beans & Peas
+01/07/17	cup(s)	0	Starchy
+01/07/17	cup(s)	0	Other
+01/07/17	cup(s)	0	Fruits
+01/07/17	cup(s)	0	Fruit Juice
+01/07/17	cup(s)	0	Whole Fruit
+01/07/17	cup(s)	1.25	Dairy
+01/07/17	cup(s)	0.25	Milk & Yogurt
+01/07/17	cup(s)	1	Cheese
+01/07/17	oz.	1	Protein Foods
+01/07/17	oz.	0	Seafood
+01/07/17	oz.	1	Meat, Poultry & Eggs
+01/07/17	oz.	0	Nuts, Seeds & Soy
+01/07/17	tsp.	0	Oils
+01/07/17	Calories	1119	Total Calories
+01/07/17	Calories	72	Added Sugars
+01/07/17	Calories	173	Saturated Fat
+01/07/17	Calories	218	Alcohol
+01/08/17	oz.	6	Grains
+01/08/17	oz.	2	Whole Grains
+01/08/17	oz.	4	Refined Grains
+01/08/17	cup(s)	2.75	Vegetables
+01/08/17	cup(s)	1	Dark Green
+01/08/17	cup(s)	0.75	Red & Orange
+01/08/17	cup(s)	0	Beans & Peas
+01/08/17	cup(s)	0.5	Starchy
+01/08/17	cup(s)	0.5	Other
+01/08/17	cup(s)	0	Fruits
+01/08/17	cup(s)	0	Fruit Juice
+01/08/17	cup(s)	0	Whole Fruit
+01/08/17	cup(s)	0	Dairy
+01/08/17	cup(s)	0	Milk & Yogurt
+01/08/17	cup(s)	0	Cheese
+01/08/17	oz.	5.5	Protein Foods
+01/08/17	oz.	4	Seafood
+01/08/17	oz.	0	Meat, Poultry & Eggs
+01/08/17	oz.	1.5	Nuts, Seeds & Soy
+01/08/17	tsp.	1	Oils
+01/08/17	Calories	1227	Total Calories
+01/08/17	Calories	63	Added Sugars
+01/08/17	Calories	54	Saturated Fat
+01/08/17	Calories	98	Alcohol
