@@ -1,15 +1,3 @@
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-import unicodedata
-import collections
-import os.path as path
-import string
-import sys
-import datetime
-import argparse
-
 #
 # Scrapes from Meal Summary from 
 # 			https://www.supertracker.usda.gov/MealSummaryReport.aspx
@@ -23,6 +11,17 @@ import argparse
 #	dates must be in format: mm/dd/yy
 #	will add assertions for proper logins and passwords later
 
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+import unicodedata
+import collections
+import os.path as path
+import string
+import sys
+import datetime
+import argparse
 
 def make_arg_parser():
 	parser = argparse.ArgumentParser(description='Scrapes portion and meal data')
@@ -204,10 +203,10 @@ def main():
 		password = args.password
 		firstDate = args.firstDate
 		secondDate = args.secondDate
-		fileOutput = args.outputdir
+		fileOutput = "mealSummaryOutput.txt" # hardcode this - user doesn't need to name it   #args.outputdir
 			
 		ROOT_DIR=path.dirname(path.dirname(path.abspath(__file__)))
-		driver=webdriver.PhantomJS(executable_path=path.join(ROOT_DIR, 'phantomjs-2.1.1-macosx/bin/phantomjs'))
+		driver=webdriver.PhantomJS(executable_path=path.join(ROOT_DIR, '../phantomjs-2.1.1-macosx/bin/phantomjs'))
 		#driver=webdriver.Chrome(executable_path=path.join(ROOT_DIR, 'chromedriver'))
 		driver.get("https://www.supertracker.usda.gov/login.aspx")
 		driver.find_element_by_id("mast_level1_cph_mast_level2_cph_login_UserName").send_keys(user)

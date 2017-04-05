@@ -1,0 +1,18 @@
+Food	Date	Portion	PortionAmt	Food_Item_Description_ID	Food_Item_ID	foodcode	modcode	priority	ARS_Version
+Beef and rice noodle soup, Oriental style (Vietnamese Pho Bo)	01/02/17	cup	1	1971	1496	28310330	0	99	JUN2011 
+Bitter Gourd	01/01/17	cup	0.25	NA	NA	NA	NA	NA	NA
+Bitter Gourd	01/01/17	cup	0.25	NA	NA	NA	NA	NA	NA
+Bitter Gourd	01/03/17	cup	0.5	NA	NA	NA	NA	NA	NA
+Cabbage, Chinese (Bok Choy), cooked (no salt or fat added)	01/02/17	cup, shredded	0.5	6539	5228	75210010	900000	13	JUN2011 
+Chinese Long Bean Real	01/03/17	cup	0.5	NA	NA	NA	NA	NA	NA
+Green bell pepper, raw	01/03/17	cup, chopped	0.5	6696	4165	75122100	0	30	JUN2011 
+Pork, chop, broiled, baked, or grilled, lean only eaten	01/01/17	ounce(s) cooked, no bone	1	949	507	22101120	0	1	JUN2011 
+Pork, chop, broiled, baked, or grilled, lean only eaten	01/01/17	ounce(s) cooked, no bone	1	949	507	22101120	0	1	JUN2011 
+Pumpkin, fresh, cooked (no salt or fat added)	01/01/17	cup	0.25	6360	5179	73201011	900000	3	JUN2011 
+Rice, white, cooked (no salt or fat added)	01/01/17	cup	0.5	6289	5145	56205010	900000	1	JUN2011 
+Rice, white, cooked (no salt or fat added)	01/01/17	cup	0.5	6289	5145	56205010	900000	1	JUN2011 
+Rice, white, cooked (no salt or fat added)	01/02/17	cup	0.5	6289	5145	56205010	900000	1	JUN2011 
+Rice, white, cooked (no salt or fat added)	01/01/17	cup	0.5	6289	5145	56205010	900000	1	JUN2011 
+Rice, white, cooked (no salt or fat added)	01/03/17	cup	0.5	6289	5145	56205010	900000	1	JUN2011 
+Rice, white, cooked (no salt or fat added)	01/03/17	cup	0.5	6289	5145	56205010	900000	1	JUN2011 
+Rice, white, cooked (no salt or fat added)	01/03/17	cup	1	6289	5145	56205010	900000	1	JUN2011 

@@ -1,0 +1,293 @@
+[INFO  - 2017-04-05T16:36:04.507Z] GhostDriver - Main - running on port 63481
+[INFO  - 2017-04-05T16:36:05.006Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/538.1 (KHTML, like Gecko) PhantomJS/2.1.1 Safari/538.1","webSecurityEnabled":true}
+[INFO  - 2017-04-05T16:36:05.006Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.customHeaders:  - {}
+[INFO  - 2017-04-05T16:36:05.007Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"2.1.1","driverName":"ghostdriver","driverVersion":"1.2.0","platform":"mac-10.9 (Mavericks)-64bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2017-04-05T16:36:05.007Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: f67f96a0-1a1d-11e7-ade8-610c6f8bcde8
+[ERROR - 2017-04-05T16:36:10.562Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.onError - msg: TypeError: undefined is not an object (evaluating 'e.keyCode')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-04-05T16:36:10.563Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.onError - stack:
+  CatchEnter (https://www.supertracker.usda.gov/MealSummaryReport.aspx:127)
+  onkeydown (https://www.supertracker.usda.gov/MealSummaryReport.aspx:1116)
+  sendEvent (:0)
+  _keyEvent (phantomjs://code/inputs.js:325)
+  _pressKey (phantomjs://code/inputs.js:280)
+  _sendKeys (phantomjs://code/inputs.js:237)
+  _postValueCommand (phantomjs://code/webelement_request_handler.js:288)
+  _handle (phantomjs://code/webelement_request_handler.js:72)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/session_request_handler.js:120)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/router_request_handler.js:78)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-04-05T16:36:10.564Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.onError - msg: TypeError: undefined is not an object (evaluating 'e.keyCode')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-04-05T16:36:10.564Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.onError - stack:
+  CatchEnter (https://www.supertracker.usda.gov/MealSummaryReport.aspx:127)
+  onkeydown (https://www.supertracker.usda.gov/MealSummaryReport.aspx:1116)
+  sendEvent (:0)
+  _keyEvent (phantomjs://code/inputs.js:325)
+  _pressKey (phantomjs://code/inputs.js:280)
+  _sendKeys (phantomjs://code/inputs.js:237)
+  _postValueCommand (phantomjs://code/webelement_request_handler.js:288)
+  _handle (phantomjs://code/webelement_request_handler.js:72)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/session_request_handler.js:120)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/router_request_handler.js:78)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-04-05T16:36:10.565Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.onError - msg: TypeError: undefined is not an object (evaluating 'e.keyCode')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-04-05T16:36:10.565Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.onError - stack:
+  CatchEnter (https://www.supertracker.usda.gov/MealSummaryReport.aspx:127)
+  onkeydown (https://www.supertracker.usda.gov/MealSummaryReport.aspx:1116)
+  sendEvent (:0)
+  _keyEvent (phantomjs://code/inputs.js:325)
+  _pressKey (phantomjs://code/inputs.js:280)
+  _sendKeys (phantomjs://code/inputs.js:237)
+  _postValueCommand (phantomjs://code/webelement_request_handler.js:288)
+  _handle (phantomjs://code/webelement_request_handler.js:72)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/session_request_handler.js:120)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/router_request_handler.js:78)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-04-05T16:36:10.565Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.onError - msg: TypeError: undefined is not an object (evaluating 'e.keyCode')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-04-05T16:36:10.566Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.onError - stack:
+  CatchEnter (https://www.supertracker.usda.gov/MealSummaryReport.aspx:127)
+  onkeydown (https://www.supertracker.usda.gov/MealSummaryReport.aspx:1116)
+  sendEvent (:0)
+  _keyEvent (phantomjs://code/inputs.js:325)
+  _pressKey (phantomjs://code/inputs.js:280)
+  _sendKeys (phantomjs://code/inputs.js:237)
+  _postValueCommand (phantomjs://code/webelement_request_handler.js:288)
+  _handle (phantomjs://code/webelement_request_handler.js:72)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/session_request_handler.js:120)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/router_request_handler.js:78)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-04-05T16:36:10.566Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.onError - msg: TypeError: undefined is not an object (evaluating 'e.keyCode')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-04-05T16:36:10.566Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.onError - stack:
+  CatchEnter (https://www.supertracker.usda.gov/MealSummaryReport.aspx:127)
+  onkeydown (https://www.supertracker.usda.gov/MealSummaryReport.aspx:1116)
+  sendEvent (:0)
+  _keyEvent (phantomjs://code/inputs.js:325)
+  _pressKey (phantomjs://code/inputs.js:280)
+  _sendKeys (phantomjs://code/inputs.js:237)
+  _postValueCommand (phantomjs://code/webelement_request_handler.js:288)
+  _handle (phantomjs://code/webelement_request_handler.js:72)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/session_request_handler.js:120)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/router_request_handler.js:78)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-04-05T16:36:10.567Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.onError - msg: TypeError: undefined is not an object (evaluating 'e.keyCode')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-04-05T16:36:10.568Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.onError - stack:
+  CatchEnter (https://www.supertracker.usda.gov/MealSummaryReport.aspx:127)
+  onkeydown (https://www.supertracker.usda.gov/MealSummaryReport.aspx:1116)
+  sendEvent (:0)
+  _keyEvent (phantomjs://code/inputs.js:325)
+  _pressKey (phantomjs://code/inputs.js:280)
+  _sendKeys (phantomjs://code/inputs.js:237)
+  _postValueCommand (phantomjs://code/webelement_request_handler.js:288)
+  _handle (phantomjs://code/webelement_request_handler.js:72)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/session_request_handler.js:120)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/router_request_handler.js:78)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-04-05T16:36:10.568Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.onError - msg: TypeError: undefined is not an object (evaluating 'e.keyCode')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-04-05T16:36:10.568Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.onError - stack:
+  CatchEnter (https://www.supertracker.usda.gov/MealSummaryReport.aspx:127)
+  onkeydown (https://www.supertracker.usda.gov/MealSummaryReport.aspx:1116)
+  sendEvent (:0)
+  _keyEvent (phantomjs://code/inputs.js:325)
+  _pressKey (phantomjs://code/inputs.js:280)
+  _sendKeys (phantomjs://code/inputs.js:237)
+  _postValueCommand (phantomjs://code/webelement_request_handler.js:288)
+  _handle (phantomjs://code/webelement_request_handler.js:72)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/session_request_handler.js:120)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/router_request_handler.js:78)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-04-05T16:36:10.569Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.onError - msg: TypeError: undefined is not an object (evaluating 'e.keyCode')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-04-05T16:36:10.569Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.onError - stack:
+  CatchEnter (https://www.supertracker.usda.gov/MealSummaryReport.aspx:127)
+  onkeydown (https://www.supertracker.usda.gov/MealSummaryReport.aspx:1116)
+  sendEvent (:0)
+  _keyEvent (phantomjs://code/inputs.js:325)
+  _pressKey (phantomjs://code/inputs.js:280)
+  _sendKeys (phantomjs://code/inputs.js:237)
+  _postValueCommand (phantomjs://code/webelement_request_handler.js:288)
+  _handle (phantomjs://code/webelement_request_handler.js:72)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/session_request_handler.js:120)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/router_request_handler.js:78)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-04-05T16:36:10.637Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.onError - msg: TypeError: undefined is not an object (evaluating 'e.keyCode')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-04-05T16:36:10.637Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.onError - stack:
+  CatchEnter (https://www.supertracker.usda.gov/MealSummaryReport.aspx:127)
+  onkeydown (https://www.supertracker.usda.gov/MealSummaryReport.aspx:1124)
+  sendEvent (:0)
+  _keyEvent (phantomjs://code/inputs.js:325)
+  _pressKey (phantomjs://code/inputs.js:280)
+  _sendKeys (phantomjs://code/inputs.js:237)
+  _postValueCommand (phantomjs://code/webelement_request_handler.js:288)
+  _handle (phantomjs://code/webelement_request_handler.js:72)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/session_request_handler.js:120)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/router_request_handler.js:78)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-04-05T16:36:10.638Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.onError - msg: TypeError: undefined is not an object (evaluating 'e.keyCode')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-04-05T16:36:10.638Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.onError - stack:
+  CatchEnter (https://www.supertracker.usda.gov/MealSummaryReport.aspx:127)
+  onkeydown (https://www.supertracker.usda.gov/MealSummaryReport.aspx:1124)
+  sendEvent (:0)
+  _keyEvent (phantomjs://code/inputs.js:325)
+  _pressKey (phantomjs://code/inputs.js:280)
+  _sendKeys (phantomjs://code/inputs.js:237)
+  _postValueCommand (phantomjs://code/webelement_request_handler.js:288)
+  _handle (phantomjs://code/webelement_request_handler.js:72)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/session_request_handler.js:120)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/router_request_handler.js:78)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-04-05T16:36:10.638Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.onError - msg: TypeError: undefined is not an object (evaluating 'e.keyCode')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-04-05T16:36:10.638Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.onError - stack:
+  CatchEnter (https://www.supertracker.usda.gov/MealSummaryReport.aspx:127)
+  onkeydown (https://www.supertracker.usda.gov/MealSummaryReport.aspx:1124)
+  sendEvent (:0)
+  _keyEvent (phantomjs://code/inputs.js:325)
+  _pressKey (phantomjs://code/inputs.js:280)
+  _sendKeys (phantomjs://code/inputs.js:237)
+  _postValueCommand (phantomjs://code/webelement_request_handler.js:288)
+  _handle (phantomjs://code/webelement_request_handler.js:72)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/session_request_handler.js:120)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/router_request_handler.js:78)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-04-05T16:36:10.639Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.onError - msg: TypeError: undefined is not an object (evaluating 'e.keyCode')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-04-05T16:36:10.639Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.onError - stack:
+  CatchEnter (https://www.supertracker.usda.gov/MealSummaryReport.aspx:127)
+  onkeydown (https://www.supertracker.usda.gov/MealSummaryReport.aspx:1124)
+  sendEvent (:0)
+  _keyEvent (phantomjs://code/inputs.js:325)
+  _pressKey (phantomjs://code/inputs.js:280)
+  _sendKeys (phantomjs://code/inputs.js:237)
+  _postValueCommand (phantomjs://code/webelement_request_handler.js:288)
+  _handle (phantomjs://code/webelement_request_handler.js:72)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/session_request_handler.js:120)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/router_request_handler.js:78)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-04-05T16:36:10.640Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.onError - msg: TypeError: undefined is not an object (evaluating 'e.keyCode')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-04-05T16:36:10.640Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.onError - stack:
+  CatchEnter (https://www.supertracker.usda.gov/MealSummaryReport.aspx:127)
+  onkeydown (https://www.supertracker.usda.gov/MealSummaryReport.aspx:1124)
+  sendEvent (:0)
+  _keyEvent (phantomjs://code/inputs.js:325)
+  _pressKey (phantomjs://code/inputs.js:280)
+  _sendKeys (phantomjs://code/inputs.js:237)
+  _postValueCommand (phantomjs://code/webelement_request_handler.js:288)
+  _handle (phantomjs://code/webelement_request_handler.js:72)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/session_request_handler.js:120)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/router_request_handler.js:78)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-04-05T16:36:10.640Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.onError - msg: TypeError: undefined is not an object (evaluating 'e.keyCode')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-04-05T16:36:10.640Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.onError - stack:
+  CatchEnter (https://www.supertracker.usda.gov/MealSummaryReport.aspx:127)
+  onkeydown (https://www.supertracker.usda.gov/MealSummaryReport.aspx:1124)
+  sendEvent (:0)
+  _keyEvent (phantomjs://code/inputs.js:325)
+  _pressKey (phantomjs://code/inputs.js:280)
+  _sendKeys (phantomjs://code/inputs.js:237)
+  _postValueCommand (phantomjs://code/webelement_request_handler.js:288)
+  _handle (phantomjs://code/webelement_request_handler.js:72)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/session_request_handler.js:120)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/router_request_handler.js:78)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-04-05T16:36:10.641Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.onError - msg: TypeError: undefined is not an object (evaluating 'e.keyCode')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-04-05T16:36:10.641Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.onError - stack:
+  CatchEnter (https://www.supertracker.usda.gov/MealSummaryReport.aspx:127)
+  onkeydown (https://www.supertracker.usda.gov/MealSummaryReport.aspx:1124)
+  sendEvent (:0)
+  _keyEvent (phantomjs://code/inputs.js:325)
+  _pressKey (phantomjs://code/inputs.js:280)
+  _sendKeys (phantomjs://code/inputs.js:237)
+  _postValueCommand (phantomjs://code/webelement_request_handler.js:288)
+  _handle (phantomjs://code/webelement_request_handler.js:72)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/session_request_handler.js:120)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/router_request_handler.js:78)
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-04-05T16:36:10.642Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.onError - msg: TypeError: undefined is not an object (evaluating 'e.keyCode')
+
+  phantomjs://platform/console++.js:263 in error
+[ERROR - 2017-04-05T16:36:10.642Z] Session [f67f96a0-1a1d-11e7-ade8-610c6f8bcde8] - page.onError - stack:
+  CatchEnter (https://www.supertracker.usda.gov/MealSummaryReport.aspx:127)
+  onkeydown (https://www.supertracker.usda.gov/MealSummaryReport.aspx:1124)
+  sendEvent (:0)
+  _keyEvent (phantomjs://code/inputs.js:325)
+  _pressKey (phantomjs://code/inputs.js:280)
+  _sendKeys (phantomjs://code/inputs.js:237)
+  _postValueCommand (phantomjs://code/webelement_request_handler.js:288)
+  _handle (phantomjs://code/webelement_request_handler.js:72)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/session_request_handler.js:120)
+  _reroute (phantomjs://code/request_handler.js:61)
+  _handle (phantomjs://code/router_request_handler.js:78)
+
+  phantomjs://platform/console++.js:263 in error
