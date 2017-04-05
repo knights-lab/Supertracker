@@ -23,4 +23,6 @@ foods <- read.table( paste( getwd(), "output", "mealSummaryOutput.txt",sep="/"),
 meals <- read.csv( paste( getwd(), "data", 'SuperTracker Foods Database 2017.csv', sep='/'))
 output <- merge( foods, meals, by.x = "Food", by.y = "foodname", all.x=TRUE)
 
+# do a merge with the portion csv here too
+
 write.table(output, file=paste(getwd(), "output", opts$outputfile, sep="/"), sep="\t", eol="\n", quote=FALSE, row.names=F)

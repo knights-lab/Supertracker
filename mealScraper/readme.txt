@@ -1,8 +1,7 @@
 This script queries a range of dates from SuperTracker, retrieves all foods and portions eaten, then outputs a table containing all foods, food codes, portions, portion codes, for all dates within the specified range. Note that this is different from nutrientScraper in that it queries the foods eaten, not the nutrient components.
 
 PREREQUISITES:
-0. python 3 and selenium must be properly installed
-1. Set environment variable SUPERTRACKER to the file path of folder /Supertracker
+1. python 3 and selenium must be properly installed
 2. place “SuperTracker Foods Database 2017.csv” file in /data
 3. make sure phantomJS folder is in /Supertracker
 4. make sure the optparse package is installed in your local version of R
