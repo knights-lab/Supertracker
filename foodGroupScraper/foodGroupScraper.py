@@ -134,8 +134,8 @@ def getFoodPortions():
                                     char.encode('ascii')
                                     v=int(portionAmt)
                                 except UnicodeEncodeError:
+                                    char=unicodedata.numeric(char)
                                     if(len(portionAmt)>1):
-                                        char=unicodedata.numeric(char)
                                         v=int(portionAmt[:-1])+char
                                     else:
                                         v=char
