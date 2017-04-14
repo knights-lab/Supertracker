@@ -1,18 +1,19 @@
 Date	Portion	PortionAmt	Food
-01/01/17	cup	0.25	Bitter Gourd
-01/01/17	cup	0.25	Pumpkin, fresh, cooked (no salt or fat added)
-01/01/17	cup	0.25	Bitter Gourd
-01/01/17	ounce(s) cooked, no bone	1	Pork, chop, broiled, baked, or grilled, lean only eaten
-01/01/17	cup	0.5	Rice, white, cooked (no salt or fat added)
-01/01/17	ounce(s) cooked, no bone	1	Pork, chop, broiled, baked, or grilled, lean only eaten
-01/01/17	cup	0.5	Rice, white, cooked (no salt or fat added)
-01/01/17	cup	0.5	Rice, white, cooked (no salt or fat added)
-01/02/17	cup	1	Beef and rice noodle soup, Oriental style (Vietnamese Pho Bo)
-01/02/17	cup, shredded	0.5	Cabbage, Chinese (Bok Choy), cooked (no salt or fat added)
-01/02/17	cup	0.5	Rice, white, cooked (no salt or fat added)
-01/03/17	cup	0.5	Bitter Gourd
-01/03/17	cup	0.5	Chinese Long Bean Real
-01/03/17	cup, chopped	0.5	Green bell pepper, raw
-01/03/17	cup	0.5	Rice, white, cooked (no salt or fat added)
-01/03/17	cup	1	Rice, white, cooked (no salt or fat added)
-01/03/17	cup	0.5	Rice, white, cooked (no salt or fat added)
+01/06/17	mug (8 fl oz)	1	Coffee, brewed, regular
+01/06/17	cup	3	Broth, beef, low sodium
+01/06/17	medium rib	3	Pork, spareribs, cooked, lean and fat eaten
+01/06/17	croissant	1	Croissant, chocolate
+01/06/17	cup	1	Rice, white, cooked (no salt or fat added)
+01/06/17	cup	1.5	Salad, Caesar, with dressing
+01/07/17	mug (8 fl oz)	1	Coffee, brewed, regular
+01/07/17	bar	2	High protein bar, candy-like, soy and milk base (Tiger's milk)
+01/07/17	ounce(s)	2	Cheese, Blue or Roquefort
+01/07/17	cup	2	Soup, mostly noodles (Ramen, Cup Noodles)
+01/07/17	standard wine glass (5 fl oz)	2	Wine, red
+01/08/17	regular slice	2	Bread, 100% whole wheat
+01/08/17	cup	2	Salad, garden, avocado, lettuce, tomato, carrots, no dressing
+01/08/17	cup	2	Clam chowder, Manhattan
+01/08/17	can or bottle (12 fl oz)	1	Beer
+01/08/17	tablespoon	1	Jam, preserves, all flavors
+01/08/17	slice (1 oz)	4	Turkey or chicken breast, luncheon meat, prepackaged or deli
+01/08/17	cup	2	Rice, white, cooked (no salt or fat added)
