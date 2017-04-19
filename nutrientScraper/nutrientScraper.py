@@ -12,6 +12,24 @@ import unicodedata
 import collections
 import os.path as path
 import sys
+import argparse
+
+def make_arg_parser():
+	parser = argparse.ArgumentParser(description='Scrapes portion and meal data')
+	parser.add_argument('-o', '--outputdir', help='Output directory', required=True)
+	parser.add_argument('-u', '--user', help='Supertracker user', required=True)
+	parser.add_argument('-p', '--password', help='password', required=True)
+	parser.add_argument('-f', '--firstDate', help='ex. 01/01/16', required=True, type=dateChecker)
+	parser.add_argument('-s', '--secondDate', help='ex. 01/02/16', required=True, type=dateChecker)
+	return parser
+
+def dateChecker(date):
+	try:
+		datetime.datetime.strptime(date, "%m/%d/%y")
+	except ValueError:
+		e = "%s is not a proper date. Do in this format: 01/15/17" %date
+		raise argparse.ArgumentTypeError(e)
+	return date
 
 def getCalories():
 	global nutrientsList
@@ -199,19 +217,17 @@ def outputNutrients():
 
 
 ROOT_DIR=path.dirname(path.abspath(__file__))
-#driver=webdriver.PhantomJS(executable_path=path.join(ROOT_DIR, 'phantomjs-2.1.1-macosx/bin/phantomjs'))
-driver=webdriver.Chrome(executable_path=path.join(ROOT_DIR, 'chromedriver'))
+driver=webdriver.PhantomJS(executable_path=path.join(ROOT_DIR, 'phantomjs-2.1.1-macosx/bin/phantomjs'))
+#driver=webdriver.Chrome(executable_path=path.join(ROOT_DIR, 'chromedriver'))
 
-
+parser = make_arg_parser()
+args = parser.parse_args()
 # ###PARAMETERS
-user=sys.argv[1]
-password=sys.argv[2]
-firstDate=sys.argv[3]
-secondDate=sys.argv[4]
-
-#var=raw_input("Add food portions as well? (Y/N)")
-
-fileOutput="output.txt"
+user = args.user
+password = args.password
+firstDate = args.firstDate
+secondDate = args.secondDate
+fileOutput = args.outputdir
 
 ###begin Selenium work
 driver.get("https://www.supertracker.usda.gov/login.aspx")
@@ -235,7 +251,7 @@ addAllNut()
 
 
 ### Print to file in outputNutrients
-getFoodGroupInfo(1)
+#getFoodGroupInfo(1)
 outputNutrients()
 
 driver.close()

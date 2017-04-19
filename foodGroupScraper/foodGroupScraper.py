@@ -27,7 +27,6 @@
 
 
 from selenium import webdriver
-from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -95,10 +94,14 @@ def getFoodPortions():
         foods="mast_level1_cph_mast_level2_cph_FoodGroupRepeater_lblItemText_"
         for i in range(20):
             nutrientsList.append(checkboxesContain[0].find_element_by_id(foods+str(i)).text)
+        #Xpaths were reallly weird for nutrients, so just decided to do this instead
+        seafood=nutrientsList[len(nutrientsList)-4]
+        nutrientsList[len(nutrientsList)-4]=nutrientsList[len(nutrientsList)-3]
+        nutrientsList[len(nutrientsList)-3]=nutrientsList[len(nutrientsList)-2]
+        nutrientsList[len(nutrientsList)-2]=seafood
         print("first section added")
-        #
-        #and "Limits"
         
+        # and "Limits"
         checkboxesContain[1].find_elements_by_tag_name('a')[0].click()
         limits="mast_level1_cph_mast_level2_cph_LimitsRepeater_lblItemText_"
 
@@ -112,12 +115,16 @@ def getFoodPortions():
             driver.find_element_by_name("ctl00$ctl00$mast_level1_cph$mast_level2_cph$txtFrom").send_keys(date)
             try:
                 driver.find_element_by_class_name("createbutton").find_element_by_tag_name('a').click()
-                currDate="Date: "+date
+                currDate="Date: "+ date
                 print(currDate)
                 getDateData=WebDriverWait(driver, 120).until(EC.text_to_be_present_in_element((By.XPATH, "//div[@id='VisibleReportContentctl00_ctl00_mast_level1_cph_mast_level2_cph_FoodDetailsRptVwr_ctl09']/descendant::table/descendant::table/descendant::table//child::tr[4]//descendant::span[2]"), currDate))
+            # except TimeoutException:
+            #     print("After inputting date, food group table is not rendering! Increase wait time for getDateData")
             finally:
                 try:
                     getPors=WebDriverWait(driver, 120).until(waiter)
+                except TimeoutError:
+                    print('increase getPors wait time')
                 finally:
                     for td in getPors:
                             v=0
@@ -150,7 +157,6 @@ def getFoodPortions():
                                 dateDict[date]=dateDict[date]+mealData
 
 def waiter(browser):
-
     elements = browser.find_elements_by_xpath("//div[@id='VisibleReportContentctl00_ctl00_mast_level1_cph_mast_level2_cph_FoodDetailsRptVwr_ctl09']/descendant::table/descendant::table/descendant::table//child::tr[last()-3]//child::td")
     if len(elements) != 0:
         return elements[2:]
@@ -166,7 +172,14 @@ def bwaiter(browser):
         return elem 
     return False
 
-
+# def foodWaiter(browser):
+#     #initialize foods properly
+#     elements=driver.find_elements_by_id("//div[@id='VisibleReportContentctl00_ctl00_mast_level1_cph_mast_level2_cph_FoodDetailsRptVwr_ctl09']/descendant::table/descendant::table/descendant::table//child::tr[7]//child::td[1]")
+#     if len(elements) !=0:
+#         print('foods found')
+#         return elements
+#     print('attaching')
+#     return False
 
 def outputNutrients():
     # Output result to food_portion_output.txt
@@ -188,15 +201,6 @@ def outputNutrients():
             f.write('{}\t{}\t{}\n'.format(i, oneMealList[it], nutrientsList[it]))
     f.close()
 
-    # Will optimize using ''.join later if needed
-    # for i in nutrientsList:
-    #   a=a+'\t'+i
-    # a=a+'\n'
-    # f.write(a)
-
-    # dateDictSorted=collections.OrderedDict(sorted(dateDict.items()))
-    # for key, value in dateDictSorted.items():
-    #   f.write(key+value+'\n')
 
 
 def main():
@@ -240,7 +244,7 @@ def main():
         outputNutrients()
         driver.close()
     except BaseException as e:
-        print('oops')
+        print('There seems to be an error. There\'s a good chance that it involves the variable referenced below:')
         print(str(e))
 
 if __name__ == '__main__':

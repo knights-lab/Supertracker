@@ -25,12 +25,19 @@ import argparse
 
 def make_arg_parser():
 	parser = argparse.ArgumentParser(description='Scrapes portion and meal data')
-	parser.add_argument('-o', '--outputdir', help='Output directory', required=True)    
 	parser.add_argument('-u', '--user', help='Supertracker user', required=True)
 	parser.add_argument('-p', '--password', help='password', required=True)
-	parser.add_argument('-f', '--firstDate', help='ex. 01/01/16', required=True)
-	parser.add_argument('-s', '--secondDate', help='ex. 01/02/16', required=True)
+	parser.add_argument('-f', '--firstDate', help='ex. 01/01/16', required=True, type=dateChecker)
+	parser.add_argument('-s', '--secondDate', help='ex. 01/02/16', required=True, type=dateChecker)
 	return parser
+
+def dateChecker(date):
+	try:
+		datetime.datetime.strptime(date, "%m/%d/%y")
+	except ValueError:
+		e = "%s is not a proper date. Do in this format: 01/15/17" %date
+		raise argparse.ArgumentTypeError(e)
+	return date
 
 def generateDates(start, end):
 	print("Generating Dates")
@@ -38,11 +45,11 @@ def generateDates(start, end):
 	""" Will generate list of dates and input into global list """
 		
 	startDate=datetime.datetime.strptime(start, "%m/%d/%y")
-	endDate=da=datetime.datetime.strptime(end, '%m/%d/%y')
-	while(startDate!=endDate):
+	endDate=datetime.datetime.strptime(end, '%m/%d/%y')
+	while(startDate != endDate):
 		print(startDate.strftime("%m/%d/%y"))
 		dateList.append(startDate.strftime("%m/%d/%y"))
-		startDate+=datetime.timedelta(days=1)
+		startDate += datetime.timedelta(days=1)
 	print(startDate.strftime("%m/%d/%y"))
 	dateList.append(startDate.strftime("%m/%d/%y"))	
 
@@ -70,7 +77,7 @@ def preWaiter(browser):
 	global secondDate
 	elements = browser.find_elements_by_xpath("//*[text()='Date']/parent::*/parent::*/following-sibling::tr/child::td/child::div[text()='"+secondDate+"']")
 	if len(elements) != 0:
-		print("elements found: "+elements[0].text + "aaa")
+		print("elements found: "+elements[0].text)
 		if(secondDate not in elements[0].text):
 			return False
 		print(len(elements))
@@ -86,6 +93,7 @@ def initWaiter(browser):
 		return elements
 	return False
 
+
 def getFoodInfo():
 	global dateDict	
 	global driver
@@ -95,6 +103,7 @@ def getFoodInfo():
 		print(btn)
 		btn[0].click()
 		#driver.find_element_by_id("mast_level1_cph_mast_level2_cph_btnreport").click()
+		
 		date=WebDriverWait(driver, 120).until(preWaiter)
 		driver.implicitly_wait(5)
 		element=WebDriverWait(driver, 120).until(waiter)
@@ -167,8 +176,7 @@ def getFoodInfo():
 							#print(meal)
 							mealData='\t'.join(str(d) for d in meal)+'\n'
 							#print(mealData)
-							dateDict[newDate]=dateDict[newDate]+mealData
-
+							dateDict[newDate]=dateDict[newDate]+mealData 
 
 def writeOutput():
 	global ROOT_DIR
@@ -176,7 +184,7 @@ def writeOutput():
 	global dateList
 	global dateDict
 	f=open(path.join(ROOT_DIR, "output", fileOutput), 'w')
-	formatStr="Date"+'\t'+"Portion"+'\t'+"PortionAmt"+'\t'+"Food"+'\n'
+	formatStr="DATE"+'\t'+"Portion"+'\t'+"PortionAmt"+'\t'+"Food"+'\n'
 	f.write(formatStr)
 	for i in dateList:
 		oneMealList=dateDict[i].split('\n')

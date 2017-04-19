@@ -4,7 +4,7 @@ PREREQUISITES:
 1. python 3 and selenium must be properly installed
 2. place “SuperTracker Foods Database 2017.csv” file in /data
 3. make sure phantomJS folder is in /Supertracker
-4. make sure the optparse package is installed in your local version of R
+4. make sure the argparse package is installed in your local version of R
 
 example:
 	./bin/scrape.foods.sh pvangay password123 01/01/17 01/31/17 pvangay_jan2017_foods.txt
