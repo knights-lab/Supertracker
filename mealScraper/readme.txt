@@ -2,9 +2,10 @@ This script queries a range of dates from SuperTracker, retrieves all foods and 
 
 PREREQUISITES:
 1. python 3 and selenium must be properly installed
-2. place “SuperTracker Foods Database 2017.csv” file in /data
+2. place “SuperTracker Foods Database 2017.csv” and “SuperTracker Foods Database 2017 - Portion Data Tab.txt” file in /data
+	— remove double quotes “” from these files — causes problems in R
 3. make sure phantomJS folder is in /Supertracker
-4. make sure the argparse package is installed in your local version of R
+4. make sure the optparse package is installed in your local version of R
 
 example:
 	./bin/scrape.foods.sh pvangay password123 01/01/17 01/31/17 pvangay_jan2017_foods.txt
@@ -18,5 +19,5 @@ parameters:
 
 ADDITIONAL NOTES
 1. mealScraper.py scrapes the meal summaries for every date
-2. foodCodeMapper.R merges the food descriptions with the super tracker CSV file in order to obtain food codes
+2. foodCodeMapper.R merges the food descriptions with the super tracker CSV file in order to obtain food codes and portion codes
 
