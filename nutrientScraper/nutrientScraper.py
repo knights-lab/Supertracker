@@ -13,10 +13,11 @@ import collections
 import os.path as path
 import sys
 import argparse
+import datetime
 
 def make_arg_parser():
 	parser = argparse.ArgumentParser(description='Scrapes portion and meal data')
-	parser.add_argument('-o', '--outputdir', help='Output directory', required=True)
+	parser.add_argument('-o', '--outputfile', help='Output file', required=True)
 	parser.add_argument('-u', '--user', help='Supertracker user', required=True)
 	parser.add_argument('-p', '--password', help='password', required=True)
 	parser.add_argument('-f', '--firstDate', help='ex. 01/01/16', required=True, type=dateChecker)
@@ -36,17 +37,17 @@ def getCalories():
 	global dateDict
 	number="mast_level1_cph_mast_level2_cph_lnkCalories"
 	try:
-		element=WebDriverWait(driver, 50).until(EC.presence_of_element_located((By.ID, "mast_level1_cph_mast_level2_cph_lbDataDetails")))
+		element=WebDriverWait(driver, 300).until(EC.presence_of_element_located((By.ID, "mast_level1_cph_mast_level2_cph_lbDataDetails")))
 	finally:
 		webe=driver.find_element_by_id(number)
 		print(webe.text.encode('ascii', errors='ignore').decode('utf-8'))
 		webe.click()
 		try:
-			chartElem=WebDriverWait(driver, 50).until(EC.presence_of_element_located((By.ID, "mast_level1_cph_mast_level2_cph_profiletextChart")))
+			chartElem=WebDriverWait(driver, 300).until(EC.presence_of_element_located((By.ID, "mast_level1_cph_mast_level2_cph_profiletextChart")))
 			driver.find_element_by_id("mast_level1_cph_mast_level2_cph_lbDataDetails").click()
 		finally:
 			try:		
-				nextElem=WebDriverWait(driver, 50).until(EC.presence_of_element_located((By.TAG_NAME, "th")))
+				nextElem=WebDriverWait(driver, 300).until(EC.presence_of_element_located((By.TAG_NAME, "th")))
 			finally:
 				if(len(dateDict)==0):
 					dateElems=driver.find_elements_by_class_name("dateColumn")
@@ -71,17 +72,17 @@ def getFoodGroupInfo(num):
 	global dateDict
 	number="mast_level1_cph_mast_level2_cph_gvFoodGroups_btnSelect_"+str(num)
 	try:
-		element=WebDriverWait(driver, 50).until(EC.presence_of_element_located((By.ID, "mast_level1_cph_mast_level2_cph_lbDataDetails")))
+		element=WebDriverWait(driver, 300).until(EC.presence_of_element_located((By.ID, "mast_level1_cph_mast_level2_cph_lbDataDetails")))
 	finally:
 		webe=driver.find_element_by_id(number)
 		print(webe.text.encode('ascii', errors='ignore').decode('utf-8'))
 		webe.click()
 		try:
-			chartElem=WebDriverWait(driver, 50).until(EC.presence_of_element_located((By.ID, "mast_level1_cph_mast_level2_cph_profiletextChart")))
+			chartElem=WebDriverWait(driver, 300).until(EC.presence_of_element_located((By.ID, "mast_level1_cph_mast_level2_cph_profiletextChart")))
 			driver.find_element_by_id("mast_level1_cph_mast_level2_cph_lbDataDetails").click()
 		finally:
 			try:		
-				nextElem=WebDriverWait(driver, 50).until(EC.presence_of_element_located((By.TAG_NAME, "th")))
+				nextElem=WebDriverWait(driver, 300).until(EC.presence_of_element_located((By.TAG_NAME, "th")))
 			finally:
 				if(len(dateDict)==0):
 					dateElems=driver.find_elements_by_class_name("dateColumn")
@@ -146,17 +147,17 @@ def getNutrientInfo(num):
 	global dateDict
 	number="mast_level1_cph_mast_level2_cph_gvNutrients_btnSelect_"+str(num)
 	try:
-		element=WebDriverWait(driver, 50).until(EC.presence_of_element_located((By.ID, "mast_level1_cph_mast_level2_cph_lbDataDetails")))
+		element=WebDriverWait(driver, 300).until(EC.presence_of_element_located((By.ID, "mast_level1_cph_mast_level2_cph_lbDataDetails")))
 	finally:
 		webe=driver.find_element_by_id(number)
 		print(webe.text.encode('ascii', errors='ignore').decode('utf-8'))
 		webe.click()
 		try:
-			chartElem=WebDriverWait(driver, 50).until(EC.presence_of_element_located((By.ID, "mast_level1_cph_mast_level2_cph_profiletextChart")))
+			chartElem=WebDriverWait(driver, 300).until(EC.presence_of_element_located((By.ID, "mast_level1_cph_mast_level2_cph_profiletextChart")))
 			driver.find_element_by_id("mast_level1_cph_mast_level2_cph_lbDataDetails").click()
 		finally:
 			try:		
-				nextElem=WebDriverWait(driver, 50).until(EC.presence_of_element_located((By.TAG_NAME, "th")))
+				nextElem=WebDriverWait(driver, 300).until(EC.presence_of_element_located((By.TAG_NAME, "th")))
 			finally:
 				if(len(dateDict)==0):
 					dateElems=driver.find_elements_by_class_name("dateColumn")
@@ -217,7 +218,7 @@ def outputNutrients():
 
 
 ROOT_DIR=path.dirname(path.abspath(__file__))
-driver=webdriver.PhantomJS(executable_path=path.join(ROOT_DIR, 'phantomjs-2.1.1-macosx/bin/phantomjs'))
+driver=webdriver.PhantomJS(executable_path='../phantomjs-2.1.1-macosx/bin/phantomjs')
 #driver=webdriver.Chrome(executable_path=path.join(ROOT_DIR, 'chromedriver'))
 
 parser = make_arg_parser()
@@ -227,7 +228,7 @@ user = args.user
 password = args.password
 firstDate = args.firstDate
 secondDate = args.secondDate
-fileOutput = args.outputdir
+fileOutput = args.outputfile
 
 ###begin Selenium work
 driver.get("https://www.supertracker.usda.gov/login.aspx")

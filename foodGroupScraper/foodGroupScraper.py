@@ -224,7 +224,7 @@ def main():
         # Create Browser
         ROOT_DIR=path.dirname(path.abspath(__file__))
         driver=webdriver.PhantomJS(executable_path='../phantomjs-2.1.1-macosx/bin/phantomjs')
-        #driver=webdriver.Chrome(executable_path=path.join(ROOT_DIR, 'chromedriver'))
+        #driver=webdriver.Chrome(executable_path='../chromedriver')
 
         # Get Sample file and populate dateDict.
         input_path=path.join(ROOT_DIR, args.inputDates)

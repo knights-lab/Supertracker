@@ -99,14 +99,14 @@ def getFoodInfo():
 	global driver
 	try:
 		print('getting info...')
-		btn=WebDriverWait(driver, 100).until(initWaiter)
+		btn=WebDriverWait(driver, 500).until(initWaiter)
 		print(btn)
 		btn[0].click()
 		#driver.find_element_by_id("mast_level1_cph_mast_level2_cph_btnreport").click()
 		
-		date=WebDriverWait(driver, 120).until(preWaiter)
+		date=WebDriverWait(driver, 500).until(preWaiter)
 		driver.implicitly_wait(5)
-		element=WebDriverWait(driver, 120).until(waiter)
+		element=WebDriverWait(driver, 500).until(waiter)
 		print("element1: "+element[0].text)
 		print("element2: "+date[0].text)
 
@@ -215,7 +215,8 @@ def main():
 			
 		ROOT_DIR=path.dirname(path.dirname(path.abspath(__file__)))
 		driver=webdriver.PhantomJS(executable_path=path.join(ROOT_DIR, '../phantomjs-2.1.1-macosx/bin/phantomjs'))
-		#driver=webdriver.Chrome(executable_path=path.join(ROOT_DIR, 'chromedriver'))
+#		driver=webdriver.Chrome(executable_path='../chromedriver')
+        
 		driver.get("https://www.supertracker.usda.gov/login.aspx")
 		driver.find_element_by_id("mast_level1_cph_mast_level2_cph_login_UserName").send_keys(user)
 		driver.find_element_by_id("mast_level1_cph_mast_level2_cph_login_Password").send_keys(password)
